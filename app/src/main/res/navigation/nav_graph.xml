@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/homeFragment">
+
+    <fragment
+        android:id="@+id/homeFragment"
+        android:name="com.sedatkavak.bitcointicker.ui.home.HomeFragment"
+        android:label="@string/home_fragment_toolbar_text"
+        tools:layout="@layout/fragment_home">
+        <action
+            android:id="@+id/action_homeFragment_to_detailFragment"
+            app:destination="@id/detailFragment"
+            app:popUpTo="@id/homeFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/detailFragment"
+        android:name="com.sedatkavak.bitcointicker.ui.detail.DetailFragment"
+        android:label="@string/detail_fragment_toolbar_text"
+        tools:layout="@layout/fragment_detail">
+        <argument
+            android:name="coin"
+            app:argType="com.sedatkavak.bitcointicker.model.home.CryptoModel" />
+    </fragment>
+    <fragment
+        android:id="@+id/profileFragment"
+        android:name="com.sedatkavak.bitcointicker.ui.account.profile.ProfileFragment"
+        android:label="ProfileFragment" >
+        <action
+            android:id="@+id/action_profileFragment_to_detailFragment"
+            app:destination="@id/detailFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/loginFragment"
+        android:name="com.sedatkavak.bitcointicker.ui.account.login.LoginFragment"
+        android:label="LoginFragment" />
+
+</navigation>
